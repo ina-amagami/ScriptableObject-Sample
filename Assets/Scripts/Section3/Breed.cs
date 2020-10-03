@@ -2,7 +2,7 @@
 
 namespace Section3
 {
-	[CreateAssetMenu(menuName = "ScriptableObject/Breed")]
+	[CreateAssetMenu(menuName = "ScriptableObject/Breed(Section3)")]
     public class Breed : ScriptableObject
     {
 		/// <summary>
