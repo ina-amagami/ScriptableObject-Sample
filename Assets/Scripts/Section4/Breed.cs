@@ -36,15 +36,11 @@ namespace Section4
 		{
 			get
 			{
-				if (_OverrideAttackMessage)
+				if (_OverrideAttackMessage || !_Parent)
 				{
 					return _AttackMessage;
 				}
-				else if (_Parent)
-				{
-					return _Parent.AttackMessage;
-				}
-				return _AttackMessage;
+				return _Parent.AttackMessage;
 			}
 		}
 		[SerializeField] private bool _OverrideAttackMessage = false;
@@ -57,15 +53,11 @@ namespace Section4
 		{
 			get
 			{
-				if (_OverrideWeaknesses)
+				if (_OverrideWeaknesses || !_Parent)
 				{
 					return _Weaknesses;
 				}
-				else if (_Parent)
-				{
-					return _Parent._Weaknesses;
-				}
-				return _Weaknesses;
+				return _Parent._Weaknesses;
 			}
 		}
 		[SerializeField] private bool _OverrideWeaknesses = false;

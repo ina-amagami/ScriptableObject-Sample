@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5edcaed372ffa4ed1bd6e74101a16a5d, type: 3}
   m_Name: Golem
   m_EditorClassIdentifier: 
+  _Parent: {fileID: 0}
   _Name: "\u30B4\u30FC\u30EC\u30E0"
+  _OverrideAttackMessage: 0
   _AttackMessage: "{0}\u306F{1}\u306B\u8155\u3092\u632F\u308A\u4E0B\u308D\u3059\uFF01"
+  _OverrideWeaknesses: 0
   _Weaknesses: 2
