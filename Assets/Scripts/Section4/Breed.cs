@@ -20,6 +20,8 @@ namespace Section4
 				// UnityEngine.Objectクラスを継承したものは != null 不要
 				if (_Parent)
 				{
+					// ここで「Name」を取得しているので
+					// "親系統が更に親系統を持っていても" 最終的な親から系統名を取得できる
 					return _Parent.Name;
 				}
 				return _Name;
@@ -68,5 +70,33 @@ namespace Section4
 		}
 		[SerializeField] private bool _OverrideWeaknesses = false;
 		[SerializeField] private WeaponType _Weaknesses = WeaponType.None;
+
+#if UNITY_EDITOR
+		private void OnValidate()
+		{
+			ValidateParent();
+		}
+
+		/// <summary>
+		/// 【重要】無限ループ防止
+		/// </summary>
+		public void ValidateParent()
+		{
+			if (!_Parent) { return; }
+
+			// 自身への参照が見つかったらその親は使えない
+			Breed current = _Parent;
+			while (current)
+			{
+				if (current == this)
+				{
+					_Parent = null;
+					Debug.LogError("[Breed] 無効な親系統です");
+					break;
+				}
+				current = current._Parent;
+			}
+		}
+#endif
 	}
-}
+}
