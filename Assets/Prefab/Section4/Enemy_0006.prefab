@@ -47,7 +47,7 @@ MonoBehaviour:
   _DisplayName: "\u30D8\u30EB\u30C9\u30E9\u30B4\u30F3"
   _MaxHp: 500
   _Atk: 50
-  _Breed: {fileID: 11400000, guid: a983a6ceecf9645e58ebaf034c576da9, type: 2}
+  _Breed: {fileID: 11400000, guid: 953a6e04330874ca39324f5184d35e7a, type: 2}
 --- !u!212 &1438645729
 SpriteRenderer:
   m_ObjectHideFlags: 0
