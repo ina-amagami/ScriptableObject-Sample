@@ -22,6 +22,7 @@ namespace Section4
 				{
 					// ここで「Name」を取得しているので
 					// "親系統が更に親系統を持っていても" 最終的な親から系統名を取得できる
+					// 再帰処理
 					return _Parent.Name;
 				}
 				return _Name;
@@ -57,7 +58,7 @@ namespace Section4
 				{
 					return _Weaknesses;
 				}
-				return _Parent._Weaknesses;
+				return _Parent.Weaknesses;
 			}
 		}
 		[SerializeField] private bool _OverrideWeaknesses = false;
